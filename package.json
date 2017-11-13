@@ -16,6 +16,9 @@
     "url": "https://github.com/BlackrockDigital/startbootstrap-agency/issues",
     "email": "feedback@startbootstrap.com"
   },
+  "scripts": {
+    "start": "node index.js"
+  },
   "license": "MIT",
   "author": "Start Bootstrap",
   "contributors": [
@@ -26,10 +29,13 @@
     "url": "https://github.com/BlackrockDigital/startbootstrap-agency.git"
   },
   "dependencies": {
+    "body-parser": "^1.18.2",
     "bootstrap": "^4.0.0-beta",
+    "express": "^4.16.2",
     "font-awesome": "4.7.0",
     "jquery": "^3.2.1",
     "jquery.easing": "^1.4.1",
+    "nodemailer": "^4.4.0",
     "popper.js": "^1.11.1"
   },
   "devDependencies": {
