@@ -11,15 +11,25 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public"), { maxAge: 86400000 }));
 
-var smtpConfig = {
+var gmailConfig = {
     host: 'smtp.gmail.com',
     port: 465,
     auth: {
-        user: 'hawksaggs@gmail.com',
-        pass: '10iec014748244@hawks'
+        user: process.env.GMAIL_USERNAME,
+        pass: process.env.GMAIL_PASSWORD
     }
 };
-var smtpTransport = nodemailer.createTransport(smtpConfig);
+
+var outlookSmtp = {
+    service: "hotmail",
+    auth: {
+        user: process.env.OUTLOOK_USERNAME,
+        pass: process.env.OUTLOOK_PASSWORD
+    }
+};
+
+var smtpTransport = nodemailer.createTransport(outlookSmtp);
+// var smtpTransport = nodemailer.createTransport(smtpConfig);
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html');
 });
